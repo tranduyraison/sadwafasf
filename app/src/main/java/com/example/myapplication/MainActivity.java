@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             articleList.add(new Article("Bài viết 2", "con chó thuốc nhỏ mắt", R.drawable.dongvat));
             articleList.add(new Article("Bài viết 3", "con chó mắt rưng rưng", R.drawable.dongvat1));
             articleList.add(new Article("Bài viết 4", "con mèo", R.drawable.img));
+            articleList.add(new Article("Bài viết 5", "su im lang", R.drawable.tinhlang));
+            articleList.add(new Article("Bài viết 6", "fhdjskbfsdhkfbkasdfbfa", R.drawable.tucgian));
         }
 
         recyclerView = findViewById(R.id.recyclerView);
