@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<CountryViewHolder> {
-    private List<String> countrylist;
+    private List<Article> articleList;
     private LayoutInflater mInflater;
 
-    public MyAdapter(Context context, List<String> list) {
+    public MyAdapter(Context context, List<Article> list) {
         this.mInflater = LayoutInflater.from(context);
-        this.countrylist = list;
+        this.articleList = list;
     }
 
     @NonNull
@@ -26,13 +26,15 @@ public class MyAdapter extends RecyclerView.Adapter<CountryViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CountryViewHolder holder, int position) {
-        String country = countrylist.get(position);
-        holder.tid.setText(String.valueOf(position + 1));
-        holder.tcountry.setText(country);
+        Article article = articleList.get(position);
+        holder.tvTitle.setText(article.getTitle());
+        holder.tvContentSummary.setText(article.getContent());
+        holder.tvViewCount.setText("Views: " + article.getViewCount());
+        holder.imgCover.setImageResource(article.getCoverImageResId());
     }
 
     @Override
     public int getItemCount() {
-        return countrylist != null ? countrylist.size() : 0;
+        return articleList != null ? articleList.size() : 0;
     }
 }
