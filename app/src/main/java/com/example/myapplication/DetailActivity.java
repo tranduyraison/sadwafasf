@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -23,14 +24,14 @@ public class DetailActivity extends AppCompatActivity {
             return insets;
         });
 
+        Button btnBack = findViewById(R.id.btnBack);
+        if (btnBack != null) {
+            btnBack.setOnClickListener(v -> finish());
+        }
+
         int index = getIntent().getIntExtra("ARTICLE_INDEX", -1);
         if (index != -1) {
             Article article = MainActivity.articleList.get(index);
-            
-            if (getSupportActionBar() != null) {
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                getSupportActionBar().setTitle(article.getTitle());
-            }
 
             // Tăng view lên 1
             article.incrementViewCount();
