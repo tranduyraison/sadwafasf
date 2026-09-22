@@ -38,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         // khi chạy lần đầu tiêu có thể có 2-3 bài viết vào trong code luôn và ảnh luôn
         if (articleList.isEmpty()) {
             articleList.add(new Article("Bài viết 1", "Nội dung bài viết 1. Đây là bài mẫu đầu tiên.", R.mipmap.ic_launcher));
-            articleList.add(new Article("Bài viết 2", "Nội dung bài viết 2. Bài mẫu thứ hai.", R.mipmap.ic_launcher));
-            articleList.add(new Article("Bài viết 3", "Nội dung bài viết 3. Bài mẫu thứ ba.", R.mipmap.ic_launcher));
+            articleList.add(new Article("Bài viết 2", "Nội dung bài viết 2", R.drawable.dongvat));
+            articleList.add(new Article("Bài viết 3", "Nội dung bài viết 3", R.drawable.dongvat1));
+            articleList.add(new Article("Bài viết 4", "Nội dung bài viết 4", R.drawable.img));
+
         }
 
         recyclerView = findViewById(R.id.recyclerView);
